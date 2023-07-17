@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { getFoods } from "./services/food-service"
-import styled from "@emotion/styled";
+import { Routes, Route } from "react-router-dom";
+import ProductsPage from "./pages/product-page";
 
 function App() {
   const [foods, setFoods] = useState([])
@@ -8,20 +9,17 @@ function App() {
   useEffect(() => {
     getFoods().then(setFoods)
   }, [])
-
-  const Wrapper = styled("div")`
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-`;
     
   return (
-    <Wrapper>
-      {foods.map((food) => (
-        <div>{food.name}</div>
-      ))}
-    </Wrapper>
+    <>
+      <Routes>
+        <Route path="/" element={<ProductsPage foods={foods}/>}>
+        </Route>
+      </Routes>
+    </>
   )
 }
+
+
 
 export default App
