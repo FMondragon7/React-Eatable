@@ -10,7 +10,11 @@ export default function ProductsPage({ foods }) {
   return (
     <Wrapper>
       {foods.map((food) => (
-        <div>{food.name}</div>
+        <div>
+          <img src={food.picture_url}/>
+          <h3>{food.name}</h3>
+          <label>${food.price/100}</label>
+        </div>
       ))}
     </Wrapper>
   );

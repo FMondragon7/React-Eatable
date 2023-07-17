@@ -12,10 +12,12 @@ function App() {
     
   return (
     <>
+    <h1>Products Dashboard</h1>
       <Routes>
         <Route path="/" element={<ProductsPage foods={foods}/>}>
         </Route>
-      </Routes>
+      </Routes> 
+      <button>Create Product</button>
     </>
   )
 }
