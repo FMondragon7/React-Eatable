@@ -54,7 +54,7 @@ const Title = styled.h1`
 const Icons = styled.div`
   display: flex;
   justify-content: space-between;
-  width: auto;
+  width: 100%;
   padding: 0 16px;
 `
 
